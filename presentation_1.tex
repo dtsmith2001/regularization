@@ -176,7 +176,7 @@ y = f(x)
 \begin{itemize}
 \item Parsimonious models
 \item Computation time for fit - determine model parameters from the data
-\item Choosing hyperparameters - free parameters 
+\item Choosing hyperparameters - free parameters supplied by the user
 \end{itemize}
 \end{frame}
 
@@ -184,7 +184,7 @@ y = f(x)
 \frametitle{Example of Model Complexity and Overfitting}
 \includegraphics{overfit}
 \begin{itemize}
-\item Overfitting - low training error, high test error - lack of generalization
+\item Overfitting: low training error, high test error - lack of generalization
 \end{itemize}
 \end{frame}
 
@@ -243,7 +243,7 @@ C(x, y) &= \min_f \sum_{i=1}^{n} \| f(x_i) - y_i \|^2 + \lambda \left( \| f \|^2
 \end{align}
 \begin{itemize}
 \item Use the measures $\|. \|^2$ and $|.|$ together
-\item $\lambda$ and $\alpha$ are hyperparameters that must be chosen via cross-validation or some other method
+\item $\lambda$ and $\alpha$ are hyperparameters that must be chosen via \textit{cross-validation} or some other method
 \item Correlated features are assigned equal weights
 \end{itemize}
 \end{frame}
