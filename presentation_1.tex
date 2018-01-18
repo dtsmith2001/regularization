@@ -214,12 +214,12 @@ y = f(x)
 \frametitle{Regularization - Control Model Complexity}
 \begin{align}
 y &= f(x) \\
-C(x, y) &= \min_f \sum_{i=1}^{n} \| f(x_i) - y_i \|^2 + \lambda \| f \|^2
+C(x, y) &= \min_f \sum_{i=1}^{n} \left| f(x_i) - y_i \right|^2 + \lambda \| f \|_2^2
 \end{align}
 \begin{itemize}
 \item All parameters are driven to zero (but not all are non--zero)
 \item The underlying optimization problem can be solved with minimizers which require first and second derivatives
-\item These methods are sometimes faster than minizers which do not use gradient information
+\item These methods are more accurate and faster than minimizers which do not use gradient information
 \item There may be explicit matrix solutions
 \end{itemize}
 \end{frame}
@@ -227,7 +227,7 @@ C(x, y) &= \min_f \sum_{i=1}^{n} \| f(x_i) - y_i \|^2 + \lambda \| f \|^2
 \begin{frame}
 \frametitle{Regularization - Introducing Sparsity}
 \begin{itemize}
-\item We want the model to have many hidden parameters zero
+\item We want the model to have many data-dependent or algorithm parameters zero
 \item Sometimes use the number of non--zero parameters
 \item Use the sum of the absolute value - $| \beta_1 + \beta_2 + \cdots + \beta_m |$
 \item This drives parameters to zero, except for a few
