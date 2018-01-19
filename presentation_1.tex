@@ -229,7 +229,7 @@ C(x, y) &= \min_f \sum_{i=1}^{n} \left| f(x_i) - y_i \right|^2 + \lambda \| f \|
 \begin{itemize}
 \item We want the model to have many data-dependent or algorithm parameters zero
 \item Sometimes use the number of non--zero parameters
-\item Use the sum of the absolute value - $| \beta_1 + \beta_2 + \cdots + \beta_m |$
+\item Use the sum of the absolute value - $| \beta_1 | + | \beta_2 | + \cdots + | \beta_m |$
 \item This drives parameters to zero, except for a few
 \item Correlated features have a few representatives included, the others are not included
 \end{itemize}
@@ -239,7 +239,7 @@ C(x, y) &= \min_f \sum_{i=1}^{n} \left| f(x_i) - y_i \right|^2 + \lambda \| f \|
 \frametitle{Regularization - ElasticNet}
 \begin{align}
 y &= f(x) \\
-C(x, y) &= \min_f \sum_{i=1}^{n} \| f(x_i) - y_i \|^2 + \lambda \left( \| f \|^2 + (1 - \alpha) \sum \left| \beta_i \right| \right)
+C(x, y) &= \min_f \sum_{i=1}^{n} \left| f(x_i) - y_i \right|^2 + \lambda \left( \alpha \| f \|_2^2 + (1 - \alpha) \sum \left| \beta_i \right| \right)
 \end{align}
 \begin{itemize}
 \item Use the measures $\|. \|^2$ and $|.|$ together
